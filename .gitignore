@@ -8,6 +8,3 @@ nbproject
 # Composer
 vendor
 composer.lock
-
-# Logs
-app/logs
