@@ -19,7 +19,7 @@ Local checkout
 
 ## JSON API: ##
 
-    Data format:
+    # Data format:
     {
         "id": "13",
         "label": "My addrXX",
@@ -30,17 +30,17 @@ Local checkout
         "country": "Ukraine"
     }
 
-    GET /api/ - get list of all addresses
+    # GET /api/ - get list of all addresses
     response:
     [ { <see Data format> }, { <see Data format> }, ... ]
 
-    GET /api/{id} - get address with specified id
+    # GET /api/{id} - get address with specified id
     response:
     { <see Data format> }
 
-    POST /api/ - create new
-    PUT /api/{id} - update existing
-    DELETE /api/{id} - delete address with specified id
+    # POST /api/ - create new
+    # PUT /api/{id} - update existing
+    # DELETE /api/{id} - delete address with specified id
     params: { <see Data format> }
     response:
     {
