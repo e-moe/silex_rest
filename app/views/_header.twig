@@ -1,0 +1,18 @@
+{% set navigation_bar = [
+    [url('index'), 'Home'],
+    [url('api'), 'API'],
+    [url('help'), 'Help'],
+    ['http://www.labinskiy.org.ua', 'Contact']
+] %}
+{% set active_page = active_page|default('index') %}
+{% set active_url = url(active_page) %}
+
+<div class="masthead">
+    <ul class="nav nav-pills pull-right">
+        {% for item in navigation_bar %}
+            <li{% if item[0] == active_url %} class="active"{% endif%}>
+                <a href="{{ item[0] }}">{{ item[1] }}</a></li>
+        {% endfor %}
+    </ul>
+    <h3 class="muted">Address book</h3>
+</div>

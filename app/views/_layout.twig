@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="{{ app.request.baseUrl ~ '/css/style.css' }}" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    {% include '_header.twig' %}
+
+    {% block content %}{% endblock %}
+
+    {% include '_footer.twig' %}
+</div> <!-- /container -->
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="//code.jquery.com/jquery.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

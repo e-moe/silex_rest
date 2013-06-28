@@ -1,0 +1,35 @@
+{% extends "_layout.twig" %}
+{% set active_page = "help" %}
+
+{% block content %}
+    <h3>RESTful web service</h3>
+    <h4>Data format</h4>
+    <pre>{
+    "id": "13",
+    "label": "My addrXX",
+    "street": "Artema",
+    "housenumber": "4",
+    "postalcode": "83001",
+    "city": "Donetsk",
+    "country": "Ukraine"
+}</pre>
+
+    <h4>GET /api/  - get list of all addresses</h4>
+    <pre>response:
+[ { &lt;see Data format&gt; }, { &lt;see Data format&gt; }, ... ]</pre>
+
+    <h4>GET /api/{id} - get address with specified id</h4>
+    <pre>response:
+{ &lt;see Data format&gt; }</pre>
+
+    <h4>POST /api/       - create new<br>
+PUT /api/{id}    - update existing<br>
+DELETE /api/{id} - delete address with specified id</h4>
+    <pre>params: { &lt;see Data format&gt; }
+response:
+{
+    "hasErrors": false,
+    "errors": null,
+    "Id": "13"
+}</pre>
+{% endblock %}

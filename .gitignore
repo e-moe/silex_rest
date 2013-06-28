@@ -1,0 +1,13 @@
+# IDE
+.buildpath
+.settings
+.project
+nbproject
+.idea
+
+# Composer
+vendor
+composer.lock
+
+# Logs
+app/logs

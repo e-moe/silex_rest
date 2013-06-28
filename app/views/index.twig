@@ -1,0 +1,37 @@
+{% extends "_layout.twig" %}
+{% set active_page = "index" %}
+
+{% block content %}
+    {% if data|length > 0 %}
+        {% autoescape true %}
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Label</th>
+                <th>Street</th>
+                <th>House number</th>
+                <th>Postal code</th>
+                <th>City</th>
+                <th>Country</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for addr in data %}
+                <tr>
+                    <th>{{ addr.id }}</th>
+                    <th>{{ addr.label }}</th>
+                    <th>{{ addr.street }}</th>
+                    <th>{{ addr.housenumber }}</th>
+                    <th>{{ addr.postalcode }}</th>
+                    <th>{{ addr.city }}</th>
+                    <th>{{ addr.country }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% endautoescape %}
+    {% else %}
+        <h3>Sorry, you have no data to display!</h3>
+    {% endif %}
+{% endblock %}
