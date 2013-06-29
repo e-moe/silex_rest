@@ -15,8 +15,6 @@ Local checkout
     # Go to clone and run
     composer update
 
-================
-
 ## JSON API: ##
 
     # Data format:
@@ -48,8 +46,6 @@ Local checkout
         "errors": null,
         "Id": "13"
     }
-
-================
 
 ## Manual Testing: ##
 
