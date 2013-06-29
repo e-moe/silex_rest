@@ -48,3 +48,9 @@ Local checkout
         "errors": null,
         "Id": "13"
     }
+
+================
+
+## Manual Testing: ##
+
+    $ curl /api/ -d '{"label":"test","street":"test",...}' -H 'Content-Type: application/json'
