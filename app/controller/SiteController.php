@@ -17,19 +17,13 @@ class SiteController implements ControllerProviderInterface
             return $app->render(
                 'index.twig',
                 array(
-                    'title' => 'Hello world! - Address book',
                     'data' => $data,
                 )
             );
         })->bind('index');
 
         $controllers->get('/help/', function() use ($app) {
-            return $app->render(
-                'help.twig',
-                array(
-                    'title' => 'Hello world! - Help',
-                )
-            );
+            return $app->render('help.twig');
         })->bind('help');
 
         return $controllers;

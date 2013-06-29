@@ -19,6 +19,9 @@ $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/views',
+    'twig.options' => array(
+        'cache' => __DIR__.'/cache/twig',
+    ),
 ));
 
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
