@@ -41,7 +41,9 @@ $app['DataProvider'] = $app->share(function ($app) {
 
 $app->error(function (\Exception $e, $code) use ($app) {
     $app['monolog']->addError(sprintf("Code '%d': %s", $code, $e->getMessage()));
-    //return new Response('We are sorry, but something went terribly wrong.');
+    if ($app['debug']) {
+        return;
+    }
     return $app->render(
         '_error.twig',
         array(

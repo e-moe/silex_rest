@@ -7,6 +7,9 @@
         "monolog/monolog": ">=1.0.0"
     },
     "autoload": {
-        "psr-0": { "lib": "app/"}
+        "psr-0": {
+            "lib": "app/",
+            "controller" : "app/"
+        }
     }
 }
