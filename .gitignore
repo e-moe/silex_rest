@@ -8,6 +8,3 @@ nbproject
 # Composer
 vendor
 composer.lock
-
-# Cache
-cache/*
