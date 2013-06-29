@@ -5,8 +5,7 @@ require_once __DIR__ . '/api.php';
 use Symfony\Component\HttpFoundation\Request;
 
 $app->get('/', function(Request $request) use ($app) {
-    $sql = 'SELECT * FROM `address`';
-    $data = $app['db']->fetchAll($sql);
+    $data = $app['DataProvider']->getAllAddresses();
     return $app->render(
         'index.twig',
         array(

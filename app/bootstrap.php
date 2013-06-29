@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
+use lib\DataProvider;
 
 class Application extends Silex\Application
 {
@@ -31,6 +32,10 @@ $app->register(new Silex\Provider\MonologServiceProvider(), array(
     'monolog.logfile' => __DIR__.'/logs/monolog.log',
     'monolog.name' => 'Addresses',
 ));
+
+$app['DataProvider'] = $app->share(function ($app) {
+    return new DataProvider($app['db']);
+});
 
 // definitions
 
