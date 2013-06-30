@@ -3,7 +3,6 @@ namespace controller;
 
 use Silex\Application;
 use Silex\ControllerProviderInterface;
-use Symfony\Component\HttpFoundation\Request;
 
 class SiteController implements ControllerProviderInterface
 {
@@ -12,7 +11,7 @@ class SiteController implements ControllerProviderInterface
         // creates a new controller based on the default route
         $controllers = $app['controllers_factory'];
 
-        $controllers->get('/', function(Request $request) use ($app) {
+        $controllers->get('/', function() use ($app) {
             $data = $app['DataProvider']->getAllAddresses();
             return $app->render(
                 'index.twig',
