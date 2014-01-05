@@ -6,6 +6,16 @@
         "doctrine/dbal": "~2.3",
         "monolog/monolog": ">=1.0.0"
     },
+    "require-dev": {
+        "hyone/codeception-silex-module": "dev-master",
+        "codeception/codeception": "*"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/hyone/codeception-silex-module.git"
+        }
+    ],
     "autoload": {
         "psr-0": {
             "lib": "app/",
