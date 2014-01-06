@@ -8,3 +8,6 @@ nbproject
 # Composer
 vendor
 composer.lock
+
+# Codeception
+tests/_log
