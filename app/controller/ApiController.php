@@ -12,12 +12,12 @@ class ApiController implements ControllerProviderInterface
         // creates a new controller based on the default route
         $controllers = $app['controllers_factory'];
 
-        $controllers->get('/', function() use ($app) {
+        $controllers->get('/', function () use ($app) {
             $data = $app['DataProvider']->getAllAddresses();
             return $app->json($data);
         })->bind('api');
 
-        $controllers->get('/{id}', function($id) use ($app) {
+        $controllers->get('/{id}', function ($id) use ($app) {
             $data = $app['DataProvider']->getAddress($id);
             return $app->json($data, !is_null($data) ? 200 : 404);
         })->assert('id', '\d+');
@@ -37,7 +37,7 @@ class ApiController implements ControllerProviderInterface
             );
         });
 
-        $controllers->put('/{id}', function(Request $request, $id) use ($app) {
+        $controllers->put('/{id}', function (Request $request, $id) use ($app) {
             $updated = $app['DataProvider']->updateAddress($id, $request->request->all());
             if ($updated) {
                 $app->log(sprintf("Entity with id '%u' updated.", $id));
@@ -52,7 +52,7 @@ class ApiController implements ControllerProviderInterface
             );
         })->assert('id', '\d+');
 
-        $controllers->delete('/{id}', function($id) use ($app) {
+        $controllers->delete('/{id}', function ($id) use ($app) {
             $deleted = $app['DataProvider']->removeAddress($id);
             if ($deleted) {
                 $app->log(sprintf("Entity with id '%u' deleted.", $id));

@@ -11,7 +11,7 @@ class SiteController implements ControllerProviderInterface
         // creates a new controller based on the default route
         $controllers = $app['controllers_factory'];
 
-        $controllers->get('/', function() use ($app) {
+        $controllers->get('/', function () use ($app) {
             $data = $app['DataProvider']->getAllAddresses();
             return $app->render(
                 'index.twig',
@@ -21,7 +21,7 @@ class SiteController implements ControllerProviderInterface
             );
         })->bind('index');
 
-        $controllers->get('/help/', function() use ($app) {
+        $controllers->get('/help/', function () use ($app) {
             return $app->render('help.twig');
         })->bind('help');
 

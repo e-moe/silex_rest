@@ -1,7 +1,8 @@
 <?php
 namespace lib;
 
-class DataProvider {
+class DataProvider
+{
     /**
      * @var \Doctrine\DBAL\Connection
      */
@@ -9,11 +10,13 @@ class DataProvider {
 
     private $dbName = 'address';
 
-    public function __construct(\Doctrine\DBAL\Connection $db) {
+    public function __construct(\Doctrine\DBAL\Connection $db)
+    {
         $this->db = $db;
     }
 
-    public function getAllAddresses() {
+    public function getAllAddresses()
+    {
         $sql = "SELECT * FROM `$this->dbName`";
         $data = $this->db->fetchAll($sql);
         return is_array($data) ? $data : array();
@@ -23,7 +26,8 @@ class DataProvider {
      * @param int $id
      * @return array|null
      */
-    public function getAddress($id) {
+    public function getAddress($id)
+    {
         $sql = "SELECT * FROM `$this->dbName` WHERE `id` = ?";
         $data = $this->db->fetchAssoc($sql, array($id));
         return is_array($data) ? $data : null;
@@ -33,7 +37,8 @@ class DataProvider {
      * @param array $data
      * @return int|null
      */
-    public function addAddress(array $data) {
+    public function addAddress(array $data)
+    {
         $inserted = $this->db->insert($this->dbName, $data);
         if ($inserted) {
             return $this->db->lastInsertId();
@@ -46,7 +51,8 @@ class DataProvider {
      * @param array $data
      * @return bool
      */
-    public function updateAddress($id, array $data) {
+    public function updateAddress($id, array $data)
+    {
         return (bool) $this->db->update($this->dbName, $data, array('id' => $id));
     }
 
@@ -54,7 +60,8 @@ class DataProvider {
      * @param int $id
      * @return bool
      */
-    public function removeAddress($id) {
+    public function removeAddress($id)
+    {
         return (bool)$this->db->delete($this->dbName, array('id' => $id));
     }
 }

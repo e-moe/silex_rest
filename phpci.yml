@@ -2,6 +2,9 @@ build_settings:
     ignore:
         - "vendor"
         - "tests"
+        - "app/cache"
+        - "app/data"
+        - "app/logs"
 setup:
     composer:
         action: "update"
