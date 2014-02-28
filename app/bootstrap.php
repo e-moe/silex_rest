@@ -3,12 +3,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
 use lib\DataProvider;
-
-class Application extends Silex\Application
-{
-    use Silex\Application\TwigTrait;
-    use Silex\Application\MonologTrait;
-}
+use lib\Application;
 
 $app = new Application();
 $app['debug'] = true;
