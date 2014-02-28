@@ -4,7 +4,7 @@ build_settings:
         - "tests"
 setup:
     composer:
-        action: "install"
+        action: "update"
 
 test:
     php_code_sniffer:
